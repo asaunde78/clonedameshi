@@ -1,0 +1,13 @@
+[project]
+name = "clonedameshi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "discord-py",
+    "dotenv>=0.9.9",
+]
+
+[tool.uv.sources]
+discord-py = { git = "https://github.com/rapptz/discord.py" }
