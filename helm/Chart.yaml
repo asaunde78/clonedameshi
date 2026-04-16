@@ -2,5 +2,5 @@ apiVersion: v2
 name: clonedameshi
 description: The daily drawing tracker inspired from the discord server Kimodameshi
 type: application
-version: 0.0.1
-appVersion: "0.0.1"
+version: 0.0.2
+appVersion: "0.0.2"
