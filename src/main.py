@@ -12,7 +12,9 @@ load_dotenv()
 TEST_GUILD_ID =  os.getenv('TEST_GUILD_ID')
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 SUBMISSIONS_CHANNEL_NAME = os.getenv('SUBMISSIONS_CHANNEL_NAME')
-
+print(TEST_GUILD_ID)
+print(DISCORD_TOKEN)
+print(SUBMISSIONS_CHANNEL_NAME)
 TEST_GUILD = discord.Object(int(TEST_GUILD_ID))  # replace with your guild id
     
 
