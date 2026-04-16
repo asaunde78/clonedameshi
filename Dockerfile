@@ -8,4 +8,4 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 ENV PATH="/app/.venv/bin:$PATH"
 ENTRYPOINT []
 
-CMD ["uv", "run", "main"]
+CMD ["uv", "run", "main.py"]
