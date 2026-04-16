@@ -17,11 +17,11 @@ spec:
       - name: {{ lower .Chart.Name }}
         image: ghcr.io/asaunde78/clonedameshi:{{ .Chart.AppVersion }} # This is auto updated by the release mechanism
         imagePullPolicy: Always     
-      env:
-      {{- range $secret, $value := .Values.secretVars }}
-      - name: {{ $secret }}
-        valueFrom:
-          secretKeyRef:
-            name: {{ $.Chart.Name }}-secrets
-            key: {{ $secret }}
-      {{- end}}   
+        env:
+        {{- range $secret, $value := .Values.secretVars }}
+        - name: {{ $secret }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ $.Chart.Name }}-secrets
+              key: {{ $secret }}
+        {{- end}}   
