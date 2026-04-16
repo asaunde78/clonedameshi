@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ lower .Chart.Name }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: {{ lower .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ lower .Chart.Name }}
+    spec:
+      containers:
+      - name: {{ lower .Chart.Name }}
+        image: ghcr.io/asaunde78/clonedameshi:{{ .Chart.AppVersion }} # This is auto updated by the release mechanism
+        imagePullPolicy: Always     
+      env:
+      {{- range $secret, $value := .Values.secretVars }}
+      - name: {{ $secret }}
+        valueFrom:
+          secretKeyRef:
+            name: {{ $.Chart.Name }}-secrets
+            key: {{ $secret }}
+      {{- end}}   

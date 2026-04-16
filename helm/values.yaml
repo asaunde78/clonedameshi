@@ -1,0 +1,6 @@
+name: "clonedameshi"
+image: "ghcr.io/asaunde78/clonedameshi"
+secretVars:
+  TEST_GUILD_ID: "clonedameshi/test_guild_id"
+  DISCORD_TOKEN: "clonedameshi/discord_token"
+  SUBMISSIONS_CHANNEL_NAME: "clonedameshi/submissions_channel_name"
